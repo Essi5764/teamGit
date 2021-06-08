@@ -1,6 +1,11 @@
+
+import React from 'react';
+
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
+
 import './App.css';
+
 
 import Header from './components/site/Headers'
 import Footer from './components/site/Footer';
@@ -20,5 +25,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
