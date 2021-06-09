@@ -8,7 +8,7 @@ const Header = () => {
     return(
         <header>
             <h1 className='header'>
-                What's happening in your neighborhood</h1>
+                What's Happening in Your Neighborhood</h1>
             
         </header>
     );

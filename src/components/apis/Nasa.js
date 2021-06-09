@@ -8,8 +8,15 @@ const Nasa = () => {
     const fetchNasa = () => {
                let url =`https://api.nasa.gov/planetary/earth/imagery?lon=${localStorage.longitude}&lat=${localStorage.latitude}&api_key=yldDyErVSjKkPKV9XBK9wQjLpthbVQ6ftfigJVoS`
          console.log(url);
-        fetch(url)
-        .then(results => console.log(results))
+        fetch(url,{
+            method:'GET',
+        })
+        .then(results =>{
+            setLocationImage(results.url)
+        })
+        // .then(json=> {
+        //     console.log(json);
+        // })
         // .then (getImage => {
         //     console.log(getImage);
         //             setLocationImage(getImage.url)})
