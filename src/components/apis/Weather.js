@@ -15,14 +15,14 @@ import React, { useState, useEffect } from 'react';
 // Helpers
 import { formatDate } from './helpers';
 // API
-import { API_URL } from './api';
+import { API_URL } from './weather';
 // Components
 import WeatherData from './components/WeatherData';
 import Info from './components/Info';
 import Unit from './components/Unit';
 import Previous from './components/Previous';
 // Img
-import BGImage from './img/mars.jpg';
+// import BGImage from './img/mars.jpg';
 // Styles
 import {
   AppWrapper,
@@ -62,35 +62,5 @@ const App = () => {
   }, []);
 
   return (
-    <>
-      <GlobalStyle bgImage={BGImage} />
-      <AppWrapper>
-        <MarsWeather>
-          {loading ? (
-            <div>Loading ...</div>
-          ) : (
-            <>
-              <h1 className='main-title'>
-                Latest weather at Elysium Plantitia
-              </h1>
-              <WeatherData sol={weather[selectedSol]} isMetric={metric} />
-              <InfoWrapper>
-                <Info />
-                <Unit metric={metric} setMetric={setMetric} />
-              </InfoWrapper>
-            </>
-          )}
-        </MarsWeather>
-        <Previous
-          weather={weather}
-          previous={previous}
-          setPrevious={setPrevious}
-          setSelectedSol={setSelectedSol}
-          isMetric={metric}
-        />
-      </AppWrapper>
-    </>
-  );
-};
-
+   
 export default App;
