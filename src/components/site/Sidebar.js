@@ -9,7 +9,7 @@ import Weather from '../apis/Weather';
 import Tickets from '../apis/Tickets';
 
 
-const Sidebar = () => {
+const Sidebar = () => { 
     return(
         <div className='sidebar'>
             <div className='sidebar-list-styling'>
