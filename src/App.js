@@ -12,28 +12,35 @@ import {  BrowserRouter as Router} from 'react-router-dom';
 
 function App() {
 
-    const useGeoLocation = () => {
-        const [location, setLocation] = useState({
-            loaded: false,
-            coordinates: {lat: "", lng: ""}
-        });
+    useEffect(()  => {
         
-        const onSuccess = location => {
-            setLocation({
-                loaded: true,
-                coordinates: {
-                    lat: location.coords.latitude,
-                    lng: location.coords.longitude,
-                }, 
-            });
-        };
+    navigator.geolocation.getCurrentPosition(function(p){
+        localStorage.setItem("latitude", p.coords.latitude);
+        localStorage.setItem("longitude", p.coords.longitude)
+     }, function(e){console.log(e)});
+  
+})
+        // const [location, setLocation] = useState({
+        //     loaded: false,
+        //     coordinates: {lat: "", lng: ""}
+        // });
+        
+        // const onSuccess = location => {
+        //     setLocation({
+        //         loaded: true,
+        //         coordinates: {
+        //             lat: location.coords.latitude,
+        //             lng: location.coords.longitude,
+        //         }, 
+        //     });
+        // };
       
-        const onError = error => {
-            setLocation({
-                loaded: true,
-                error,
-            });
-        };
+        // const onError = error => {
+        //     setLocation({
+        //         loaded: true,
+        //         error,
+        //     });
+        // };
       
         // // setLocation((state) => ({
         //     //     ...state,
@@ -45,18 +52,18 @@ function App() {
         //         // }));
         //     };
             
-            navigator.geolocation.getCurrentPosition(onSuccess, onError){
-                localStorage.setItem("latitude", location.coords.latitude);
-                localStorage.setItem("longitude", location.coords.longitude)
-            }, function(e){console.log(e)};
+    //         navigator.geolocation.getCurrentPosition(, onError);{
+    //             localStorage.setItem("latitude", location.coords.latitude);
+    //             localStorage.setItem("longitude", location.coords.longitude)
+    //         }
             
-        }, []),
-        return location;
-    }
+        
+    //     return location;
+    // }
 
-    useEffect(()  => {
-        useGeoLocation();
-            })
+    // useEffect(()  => {
+    //     useGeoLocation();
+    //         })
       
   return (
     <div className='App'>
@@ -71,5 +78,5 @@ function App() {
 
 
 
-export default useGeoLocation
+// export default useGeoLocation
 export default App;
