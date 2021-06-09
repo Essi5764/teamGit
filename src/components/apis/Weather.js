@@ -33,10 +33,6 @@ const Weather = () => {
     )
 };
 
-export default Nasa;
+export default Weather;
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 834f1f8d6dc4a7ca0bf7351c3218bfa39160c850
