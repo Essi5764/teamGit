@@ -13,8 +13,8 @@ const Weather = () => {
 
 export default Weather;
 
-// import React, { useState, useEffect } from 'react';
-// // Helpers
+// port React, { useState, useEffect } from 'react';im
+// Helpers
 // import { formatDate } from './helpers';
 // // API
 // import { API_URL } from './weather';

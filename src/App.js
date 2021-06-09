@@ -1,6 +1,5 @@
 
 import React, { useEffect} from 'react'; 
-
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 
@@ -14,13 +13,13 @@ function App() {
 
     useEffect(()  => {
         
-    navigator.geolocation.getCurrentPosition(function(p){
-        localStorage.setItem("latitude", p.coords.latitude);
-        localStorage.setItem("longitude", p.coords.longitude)
-     }, function(e){console.log(e)});
-  
-})
 
+        navigator.geolocation.getCurrentPosition(function(p){
+            localStorage.setItem("latitude", p.coords.latitude);
+            localStorage.setItem("longitude", p.coords.longitude)
+         }, function(e){console.log(e)});
+      
+    })
 
       
   return (
