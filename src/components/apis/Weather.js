@@ -4,7 +4,7 @@ import React, {useState, useEffect} from 'react'
 
 
 const Weather = () => {
-    const [locationTemperature, setLocationImage] = useState('')
+    const [setLocationTemeprature] = useState('')
 
     const fetchWeatherData = (props) => {
         
@@ -13,8 +13,9 @@ const Weather = () => {
         console.log(url);
         fetch(url,{
             method: 'GET'})
-        .then(results => results.json())
-        .then(json => console.log(json))
+            .then(results =>{
+                setLocationTemeprature(results.url)
+            })
         
         
 
@@ -27,7 +28,7 @@ const Weather = () => {
     return(
 <div className='main'>
     <div className='mainDiv'>
-        <p>Placeholder for Nasa.</p>
+        <p>Placeholder for Weather.</p>
     </div>
 </div>
     )
