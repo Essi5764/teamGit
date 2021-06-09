@@ -5,20 +5,16 @@ import React, {useState, useEffect} from 'react'
 const Nasa = () => {
     const [locationImage, setLocationImage] = useState('')
 
-    const fetchNasa = (props) => {
-        // let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
-        // console.log(year, month, date);
-        let url =`https://api.nasa.gov/planetary/earth/imagery?lon=${localStorage.longitude}&lat=${localStorage.latitude}&api_key=yldDyErVSjKkPKV9XBK9wQjLpthbVQ6ftfigJVoS`
+    const fetchNasa = () => {
+               let url =`https://api.nasa.gov/planetary/earth/imagery?lon=${localStorage.longitude}&lat=${localStorage.latitude}&api_key=yldDyErVSjKkPKV9XBK9wQjLpthbVQ6ftfigJVoS`
          console.log(url);
-        fetch(url,{
-            method: 'GET'})
-        .then(results => results.json())
-        .then(json => console.log(json))
-         
-        
+        fetch(url)
+        .then(results => console.log(results))
+        // .then (getImage => {
+        //     console.log(getImage);
+        //             setLocationImage(getImage.url)})
+    }   
 
-    }
-    
     useEffect(() => {
         fetchNasa();
     }, [])
@@ -26,7 +22,8 @@ const Nasa = () => {
     return(
 <div className='main'>
     <div className='mainDiv'>
-        <p>Placeholder for Nasa.</p>
+        <h2>Latest Satellite Image for Your Location</h2>
+        <img src= {locationImage} alt ="Nasa Satellite Image"/>
     </div>
 </div>
     )
