@@ -2,7 +2,6 @@ import React from 'react';
 
 const Weather = () => {
 
-
     return(
 <div className='main'>
     <div className='mainDiv'>

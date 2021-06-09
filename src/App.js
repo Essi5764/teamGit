@@ -13,15 +13,14 @@ function App() {
 
     useEffect(()  => {
         
+
         navigator.geolocation.getCurrentPosition(function(p){
             localStorage.setItem("latitude", p.coords.latitude);
             localStorage.setItem("longitude", p.coords.longitude)
          }, function(e){console.log(e)});
       
     })
-    
 
-    
       
   return (
     <div className='App'>
@@ -33,7 +32,6 @@ function App() {
     </div>
   );
 };
-
 
 
 export default App;

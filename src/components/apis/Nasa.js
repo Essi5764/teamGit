@@ -8,7 +8,7 @@ const Nasa = () => {
     const fetchNasa = (props) => {
         // let [month, date, year]    = new Date().toLocaleDateString("en-US").split("/")
         // console.log(year, month, date);
-        let url =`https://api.nasa.gov/planetary/earth/imagery?lon=-86.158066&lat=39.768402&api_key=yldDyErVSjKkPKV9XBK9wQjLpthbVQ6ftfigJVoS`
+        let url =`https://api.nasa.gov/planetary/earth/imagery?lon=${localStorage.longitude}&lat=${localStorage.latitude}&api_key=yldDyErVSjKkPKV9XBK9wQjLpthbVQ6ftfigJVoS`
          console.log(url);
         fetch(url,{
             method: 'GET'})
