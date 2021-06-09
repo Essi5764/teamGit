@@ -17,7 +17,7 @@ function App() {
         navigator.geolocation.getCurrentPosition(function(p){
             localStorage.setItem("latitude", p.coords.latitude);
             localStorage.setItem("longitude", p.coords.longitude)
-         }, function(e){console.log(e)});
+        }, function(e){console.log(e)});
       
     })
 
