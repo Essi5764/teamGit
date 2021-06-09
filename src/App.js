@@ -9,6 +9,7 @@ import Sidebar from './components/site/Sidebar';
 import {  BrowserRouter as Router} from 'react-router-dom';
 
 
+
 function App() {
 
     useEffect(()  => {
@@ -18,9 +19,8 @@ function App() {
             localStorage.setItem("longitude", p.coords.longitude)
          }, function(e){console.log(e)});
       
-    })
-    
-
+    })  
+        
     
       
   return (
