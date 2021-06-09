@@ -33,6 +33,6 @@ const Weather = () => {
     )
 };
 
-export default Nasa;
+export default Weather;
 
 
